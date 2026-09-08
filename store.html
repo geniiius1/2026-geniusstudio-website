@@ -7,6 +7,38 @@
   <title>Store | Genius Studio</title>
   <meta name="description"
     content="Browse Genius Studio's store for official software licences including Adobe Creative Cloud, Microsoft Office, Autodesk, IDM and more.">
+
+  <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geniusstudio.tech/store.html">
+  <meta property="og:title" content="Store | Genius Studio">
+  <meta property="og:description"
+    content="Browse Genius Studio's store for official software licences including Adobe Creative Cloud, Microsoft Office, Autodesk, IDM and more.">
+  <meta property="og:image" content="https://geniusstudio.tech/img/og-preview.png">
+  <meta property="og:image:secure_url" content="https://geniusstudio.tech/img/og-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Genius Studio Store — Official Software Licences">
+  <meta property="og:site_name" content="Genius Studio">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://geniusstudio.tech/store.html">
+  <meta name="twitter:title" content="Store | Genius Studio">
+  <meta name="twitter:description"
+    content="Browse Genius Studio's store for official software licences including Adobe Creative Cloud, Microsoft Office, Autodesk, IDM and more.">
+  <meta name="twitter:image" content="https://geniusstudio.tech/img/og-preview.png">
+
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('gs-theme');
+        var t = s || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="branding/favicon/favicon.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -62,9 +94,28 @@
   <!-- STORE GRID -->
   <section class="section">
     <div class="container">
+      <!-- Store Controls: Search & Category Filter -->
+      <div class="store-controls reveal" style="margin-bottom: 2.5rem;">
+        <div class="store-search-wrapper">
+          <svg class="store-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="store-search" class="store-search-input" placeholder="Search software (e.g. Adobe, Microsoft, IDM)..." autocomplete="off" aria-label="Search software">
+          <button type="button" id="store-search-clear" class="store-search-clear" aria-label="Clear search">&times;</button>
+        </div>
+        <div class="store-filters" role="tablist" aria-label="Software Categories">
+          <button type="button" class="store-filter-btn active" data-category="all">All</button>
+          <button type="button" class="store-filter-btn" data-category="creative">Creative &amp; Design</button>
+          <button type="button" class="store-filter-btn" data-category="productivity">Productivity &amp; Office</button>
+          <button type="button" class="store-filter-btn" data-category="engineering">3D &amp; Engineering</button>
+          <button type="button" class="store-filter-btn" data-category="utilities">Security &amp; Utilities</button>
+        </div>
+      </div>
+
       <div class="store-grid">
 
-        <a href="contact.html" class="product-card reveal">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Adobe%20Creative%20Cloud" class="product-card reveal" data-category="creative" data-name="Adobe Creative Cloud">
           <div class="product-card__media">
             <img src="poster/adobecc.webp" alt="Adobe Creative Cloud" class="product-card__img">
           </div>
@@ -74,7 +125,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-1">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Adobe%20Stock" class="product-card reveal reveal-delay-1" data-category="creative" data-name="Adobe Stock">
           <div class="product-card__media">
             <img src="poster/adobestock.webp" alt="Adobe Stock" class="product-card__img">
           </div>
@@ -84,7 +135,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-2">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Autodesk" class="product-card reveal reveal-delay-2" data-category="engineering" data-name="Autodesk AutoCAD 3ds Max Maya Revit">
           <div class="product-card__media">
             <img src="poster/autodesk.webp" alt="Autodesk" class="product-card__img">
           </div>
@@ -94,7 +145,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-3">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Canva%20Pro" class="product-card reveal reveal-delay-3" data-category="creative" data-name="Canva Pro">
           <div class="product-card__media">
             <img src="poster/canva.webp" alt="Canva Pro" class="product-card__img">
           </div>
@@ -104,7 +155,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Grammarly" class="product-card reveal" data-category="productivity" data-name="Grammarly Premium">
           <div class="product-card__media">
             <img src="poster/grammarly.webp" alt="Grammarly" class="product-card__img">
           </div>
@@ -115,7 +166,7 @@
         </a>
 
         <a href="https://www.internetdownloadmanager.com/resellers/geniusstudio.html" target="_blank" rel="noopener"
-          class="product-card reveal reveal-delay-1">
+          class="product-card reveal reveal-delay-1" data-category="utilities" data-name="Internet Download Manager IDM">
           <div class="product-card__media">
             <img src="poster/idm.webp" alt="Internet Download Manager" class="product-card__img">
           </div>
@@ -125,7 +176,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-2">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=iStock" class="product-card reveal reveal-delay-2" data-category="creative" data-name="iStock by Getty Images">
           <div class="product-card__media">
             <img src="poster/istock.webp" alt="iStock" class="product-card__img">
           </div>
@@ -135,7 +186,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-3">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Kaspersky%20Total%20Security" class="product-card reveal reveal-delay-3" data-category="utilities" data-name="Kaspersky Total Security Antivirus">
           <div class="product-card__media">
             <img src="poster/kts.webp" alt="Kaspersky Total Security" class="product-card__img">
           </div>
@@ -145,7 +196,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Microsoft%20Office%202021" class="product-card reveal" data-category="productivity" data-name="Microsoft Office 2021 Word Excel PowerPoint">
           <div class="product-card__media">
             <img src="poster/o2021.webp" alt="Microsoft Office 2021" class="product-card__img">
           </div>
@@ -155,7 +206,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-1">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Microsoft%20365" class="product-card reveal reveal-delay-1" data-category="productivity" data-name="Microsoft 365 Office 365 OneDrive">
           <div class="product-card__media">
             <img src="poster/o365.webp" alt="Microsoft 365" class="product-card__img">
           </div>
@@ -165,7 +216,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-2">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Microsoft%20Project%202019" class="product-card reveal reveal-delay-2" data-category="productivity" data-name="Microsoft Project 2019">
           <div class="product-card__media">
             <img src="poster/project19.webp" alt="Microsoft Project 2019" class="product-card__img">
           </div>
@@ -175,7 +226,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-3">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=QuillBot" class="product-card reveal reveal-delay-3" data-category="productivity" data-name="QuillBot AI Paraphrasing">
           <div class="product-card__media">
             <img src="poster/quillbot.webp" alt="QuillBot" class="product-card__img">
           </div>
@@ -185,7 +236,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Shutterstock" class="product-card reveal" data-category="creative" data-name="Shutterstock Stock Photos Vectors">
           <div class="product-card__media">
             <img src="poster/shutterstock.webp" alt="Shutterstock" class="product-card__img">
           </div>
@@ -195,7 +246,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-1">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Skillshare" class="product-card reveal reveal-delay-1" data-category="productivity" data-name="Skillshare Online Learning">
           <div class="product-card__media">
             <img src="poster/skillshare.webp" alt="Skillshare" class="product-card__img">
           </div>
@@ -205,7 +256,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-2">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Microsoft%20Visio%202019" class="product-card reveal reveal-delay-2" data-category="productivity" data-name="Microsoft Visio 2019 Diagrams">
           <div class="product-card__media">
             <img src="poster/visio19.webp" alt="Microsoft Visio 2019" class="product-card__img">
           </div>
@@ -215,7 +266,7 @@
           </div>
         </a>
 
-        <a href="contact.html" class="product-card reveal reveal-delay-3">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Windows%20OS" class="product-card reveal reveal-delay-3" data-category="utilities" data-name="Windows OS 10 11 Pro">
           <div class="product-card__media">
             <img src="poster/windows.webp" alt="Windows OS" class="product-card__img">
           </div>
@@ -224,6 +275,17 @@
             <span class="product-card__action">Order Now &rarr;</span>
           </div>
         </a>
+
+        <!-- Empty State -->
+        <div id="store-empty" class="store-empty" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <line x1="8" y1="11" x2="14" y2="11"></line>
+          </svg>
+          <h3>No software found</h3>
+          <p>We couldn't find any products matching your search. Looking for a custom licence? <a href="contact.html">Contact our team</a>.</p>
+        </div>
 
       </div>
 
@@ -271,7 +333,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 Genius Studio. All rights reserved. &mdash; <a
+        <p class="footer__copy">&copy; 2026 <a href="index.html" style="color:var(--clr-accent);">Genius Studio</a>. All rights reserved. &bull; <a
             href="https://www.facebook.com/mohammedhx2" target="_blank" rel="noopener"
             style="color:var(--clr-accent);">Mohammed Hassan</a></p>
         <div class="footer__socials">
@@ -288,7 +350,12 @@
           <a href="https://www.youtube.com/@geniusstudiotech" target="_blank" rel="noopener" aria-label="YouTube"><svg
               viewBox="0 0 1080 756">
               <path
-                d="M1057.4 118.1c-12.4-46.5-49-83.1-95.5-95.5C877.7 0 540 0 540 0S202.3 0 118 22.6c-46.4 12.4-83 49-95.4 95.5C0 202.3 0 378 0 378s0 175.7 22.6 259.9c12.4 46.5 49 83.1 95.5 95.5C202.3 756 540 756 540 756s337.7 0 422-22.6c46.5-12.4 83.1-49 95.5-95.5C1080 553.7 1080 378 1080 378s0-175.7-22.6-259.9zM432 540V216l280.6 162L432 540z" />
+                d="M1057.4 118.1c-12.4-46.5-49-83.1-95.5-95.5C877.7 0 540 0 540 0S202.3 0 118 22.6c-46.4 12.4-83 49-95.4 95.5C0 202.3 0 378 0 378s0 175.7 22.6 259.9c12.4 46.5 49 83.1 95.5 95.5C1080 553.7 1080 378 1080 378s0-175.7-22.6-259.9zM432 540V216l280.6 162L432 540z" />
+            </svg></a>
+          <a href="https://wa.me/message/EVDYGDIDD2ABM1" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+              viewBox="0 0 93 93">
+              <path
+                d="M46.5.5C21.1.5.5 21.1.5 46.5c0 9.6 2.9 18.7 8.4 26.5L.7 91c-.2.4-.1.8.2 1.1.3.3.7.4 1.1.3l19.7-7.2c7.4 4.8 16 7.3 24.8 7.3h.1c25.4 0 46-20.6 46-46S71.8.5 46.5.5z" />
             </svg></a>
           <a href="https://t.me/mohammedhx2" target="_blank" rel="noopener" aria-label="Telegram"><svg
               viewBox="0 0 448 376">
@@ -301,6 +368,72 @@
   </footer>
 
   <script src="background.js"></script>
+  <script>
+    (function () {
+      const searchInput = document.getElementById('store-search');
+      const searchClear = document.getElementById('store-search-clear');
+      const filterBtns = document.querySelectorAll('.store-filter-btn');
+      const cards = document.querySelectorAll('.store-grid .product-card');
+      const emptyState = document.getElementById('store-empty');
+
+      let currentCategory = 'all';
+      let currentQuery = '';
+
+      function filterProducts() {
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const category = card.dataset.category || '';
+          const name = (card.dataset.name || '').toLowerCase();
+
+          const matchesCategory = (currentCategory === 'all') || (category === currentCategory);
+          const matchesQuery = !currentQuery || name.includes(currentQuery);
+
+          if (matchesCategory && matchesQuery) {
+            card.classList.remove('is-hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+
+        if (emptyState) {
+          emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      }
+
+      // Filter tabs click
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.dataset.category;
+          filterProducts();
+        });
+      });
+
+      // Search input typing
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value.trim().toLowerCase();
+          if (searchClear) {
+            searchClear.style.display = currentQuery ? 'block' : 'none';
+          }
+          filterProducts();
+        });
+      }
+
+      if (searchClear) {
+        searchClear.addEventListener('click', () => {
+          searchInput.value = '';
+          currentQuery = '';
+          searchClear.style.display = 'none';
+          searchInput.focus();
+          filterProducts();
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>

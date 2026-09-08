@@ -7,6 +7,38 @@
   <title>Services | Genius Studio</title>
   <meta name="description"
     content="Explore Genius Studio's full range of services: Graphic & Motion Design, Web & App Development, and Original Software Solutions.">
+
+  <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geniusstudio.tech/services.html">
+  <meta property="og:title" content="Services | Genius Studio">
+  <meta property="og:description"
+    content="Explore Genius Studio's full range of services: Graphic & Motion Design, Web & App Development, and Original Software Solutions.">
+  <meta property="og:image" content="https://geniusstudio.tech/img/og-preview.png">
+  <meta property="og:image:secure_url" content="https://geniusstudio.tech/img/og-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Genius Studio Services — Design, Development & Software">
+  <meta property="og:site_name" content="Genius Studio">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://geniusstudio.tech/services.html">
+  <meta name="twitter:title" content="Services | Genius Studio">
+  <meta name="twitter:description"
+    content="Explore Genius Studio's full range of services: Graphic & Motion Design, Web & App Development, and Original Software Solutions.">
+  <meta name="twitter:image" content="https://geniusstudio.tech/img/og-preview.png">
+
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('gs-theme');
+        var t = s || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="branding/favicon/favicon.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -60,7 +92,7 @@
   </div>
 
   <!-- =========================================
-     SERVICE 1 — Graphic & Motion Design
+     SERVICE 01 | Graphic &amp; Motion Design
      ========================================= -->
   <section class="section" id="graphic">
     <div class="container">
@@ -73,11 +105,11 @@
           <p class="body-lg">We create visually compelling and impactful designs, employing a blend of creativity and
             strategic thinking to express your message effectively across every medium.</p>
           <p class="body-md" style="margin-top:1rem;">By breathing life into ideas through visually dynamic animations,
-            we captivate audiences with precision — from brand identities and social media assets to full motion
+            we captivate audiences with precision, from brand identities and social media assets to full motion
             campaigns and video production.</p>
           <div style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
-            <a href="contact.html" class="btn btn--primary">Start a Project</a>
-            <a href="contact.html" class="btn btn--ghost">Get a Quote</a>
+            <a href="contact.html?service=Graphic%20%26%20Motion%20Design" class="btn btn--primary">Start a Project</a>
+            <a href="contact.html?service=Graphic%20%26%20Motion%20Design" class="btn btn--ghost">Get a Quote</a>
           </div>
         </div>
 
@@ -98,7 +130,7 @@
   </section>
 
   <!-- =========================================
-     SERVICE 2 — Web & App Development
+     SERVICE 02 | Web &amp; App Development
      ========================================= -->
   <section class="section section--alt" id="dev">
     <div class="container">
@@ -111,11 +143,11 @@
           <p class="body-lg">Building state-of-the-art websites and applications. We write clean, performant, and
             scalable code to deliver seamless digital experiences tailored to your exact needs.</p>
           <p class="body-md" style="margin-top:1rem;">From landing pages to complex web platforms and mobile
-            applications — we design, develop, and launch with a relentless focus on quality, performance, and user
+            applications, we design, develop, and launch with a relentless focus on quality, performance, and user
             experience.</p>
           <div style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
-            <a href="contact.html" class="btn btn--primary">Hire Us</a>
-            <a href="contact.html" class="btn btn--ghost">Get a Quote</a>
+            <a href="contact.html?service=Web%20%26%20App%20Development" class="btn btn--primary">Hire Us</a>
+            <a href="contact.html?service=Web%20%26%20App%20Development" class="btn btn--ghost">Get a Quote</a>
           </div>
         </div>
 
@@ -137,7 +169,7 @@
   </section>
 
   <!-- =========================================
-     SERVICE 3 — Software Solutions
+     SERVICE 03 | Software Solutions
      ========================================= -->
   <section class="section" id="software">
     <div class="container">
@@ -154,7 +186,7 @@
             properly licensed. We help businesses stay equipped, productive, and legal.</p>
           <div style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
             <a href="store.html" class="btn btn--primary">Browse Store</a>
-            <a href="contact.html" class="btn btn--ghost">Request Licence</a>
+            <a href="contact.html?service=Original%20Software%20Licence" class="btn btn--ghost">Request Licence</a>
           </div>
         </div>
 
@@ -216,7 +248,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 Genius Studio. All rights reserved. &mdash; <a
+        <p class="footer__copy">&copy; 2026 <a href="index.html" style="color:var(--clr-accent);">Genius Studio</a>. All rights reserved. &bull; <a
             href="https://www.facebook.com/mohammedhx2" target="_blank" rel="noopener"
             style="color:var(--clr-accent);">Mohammed Hassan</a></p>
         <div class="footer__socials">
@@ -234,6 +266,11 @@
               viewBox="0 0 1080 756">
               <path
                 d="M1057.4 118.1c-12.4-46.5-49-83.1-95.5-95.5C877.7 0 540 0 540 0S202.3 0 118 22.6c-46.4 12.4-83 49-95.4 95.5C0 202.3 0 378 0 378s0 175.7 22.6 259.9c12.4 46.5 49 83.1 95.5 95.5C202.3 756 540 756 540 756s337.7 0 422-22.6c46.5-12.4 83.1-49 95.5-95.5C1080 553.7 1080 378 1080 378s0-175.7-22.6-259.9zM432 540V216l280.6 162L432 540z" />
+            </svg></a>
+          <a href="https://wa.me/message/EVDYGDIDD2ABM1" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+              viewBox="0 0 93 93">
+              <path
+                d="M46.5.5C21.1.5.5 21.1.5 46.5c0 9.6 2.9 18.7 8.4 26.5L.7 91c-.2.4-.1.8.2 1.1.3.3.7.4 1.1.3l19.7-7.2c7.4 4.8 16 7.3 24.8 7.3h.1c25.4 0 46-20.6 46-46S71.8.5 46.5.5z" />
             </svg></a>
           <a href="https://t.me/mohammedhx2" target="_blank" rel="noopener" aria-label="Telegram"><svg
               viewBox="0 0 448 376">
