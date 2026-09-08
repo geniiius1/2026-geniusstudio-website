@@ -1,0 +1,3 @@
+@echo off
+echo Updating logos on the website...
+PowerShell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Update-Logos.ps1"

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Genius Studio</title>
+  <meta name="description"
+    content="Get in touch with Genius Studio. Contact us for design, development, software, or marketing services.">
+  <link rel="icon" type="image/svg+xml" href="branding/favicon/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Genius Studio Home">
+        <img src="img/GsLogo.svg" alt="Genius Studio Logo">
+        <span class="nav__logo-text">Genius <span>Studio</span></span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="contact.html" class="btn btn--primary">Contact Us</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="nav__drawer" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="store.html">Store</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero text-center">
+    <div class="container">
+      <div class="eyebrow reveal" style="justify-content:center;">
+        <span class="dot"></span>Get in Touch
+      </div>
+      <h1 class="display-1 reveal reveal-delay-1">Let's build something <em>great.</em></h1>
+      <p class="body-lg reveal reveal-delay-2" style="max-width:520px; margin-inline:auto; margin-top:1.5rem;">
+        Ready to start your next project? Reach out and we'll get back to you within 24 hours.
+      </p>
+    </div>
+  </div>
+
+  <!-- CONTACT GRID -->
+  <section class="section">
+    <div class="container contact-grid">
+
+      <!-- Form -->
+      <div class="card reveal" style="padding:3rem;">
+        <h2 class="headline" style="margin-bottom:2rem;">Send a Message</h2>
+        <form id="contact-form" style="display:flex; flex-direction:column; gap:1.5rem;">
+          <div class="form-field">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+964 772 212 4522" autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <label for="service">Service Interested In</label>
+            <input type="hidden" id="service" name="service" value="">
+            <div class="custom-select" id="custom-select">
+              <div class="custom-select__trigger" tabindex="0">
+                <span class="custom-select__value">Select a service…</span>
+                <svg class="custom-select__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="custom-select__options">
+                <div class="custom-select__option" data-value="Graphic & Motion Design">Graphic &amp; Motion Design
+                </div>
+                <div class="custom-select__option" data-value="Web & App Development">Web &amp; App Development</div>
+                <div class="custom-select__option" data-value="Original Software Licence">Original Software Licence
+                </div>
+                <div class="custom-select__option" data-value="Other">Other</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project…"
+              required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" id="submit-btn"
+            style="width:100%; justify-content:center; font-size:1rem; padding:1rem;">
+            <span class="btn__text">Send Message</span>
+            <span class="btn__spinner" style="display:none;">
+              <svg class="spinner-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round">
+                <path d="M12 2a10 10 0 0 1 10 10" />
+              </svg>
+              Sending…
+            </span>
+          </button>
+        </form>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">
+          <div class="toast__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+          </div>
+          <div class="toast__content">
+            <p class="toast__title">Message Sent!</p>
+            <p class="toast__desc">We'll get back to you within 24 hours.</p>
+          </div>
+          <button class="toast__close" aria-label="Close notification">&times;</button>
+        </div>
+      </div>
+
+      <!-- Direct channels -->
+      <div class="reveal reveal-delay-2">
+        <h2 class="headline" style="margin-bottom:2rem;">Direct Channels</h2>
+        <div class="social-links">
+          <a href="https://wa.me/message/EVDYGDIDD2ABM1" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 93 93" fill="currentColor">
+              <path
+                d="M46.5.5C21.1.5.5 21.1.5 46.5c0 9.6 2.9 18.7 8.4 26.5L.7 91c-.2.4-.1.8.2 1.1.3.3.7.4 1.1.3l19.7-7.2c7.4 4.8 16 7.3 24.8 7.3h.1c25.4 0 46-20.6 46-46S71.8.5 46.5.5z" />
+            </svg>
+            WhatsApp
+          </a>
+          <a href="https://t.me/mohammedhx2" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 448 376" fill="currentColor">
+              <path
+                d="m446.7 34.4-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9L366.7 75.3c8.3-7.4-1.8-11.5-12.9-4.1l-236 148.6L16.2 188c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 2.2c18.4-6.9 34.5 4.1 28.5 32.2z" />
+            </svg>
+            Telegram — @mohammedhx2
+          </a>
+          <a href="https://www.facebook.com/geniusstudio.tech" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 192 384" fill="currentColor">
+              <path
+                d="M128 128V89.9c0-17.2 3.8-25.9 30.5-25.9H192V0h-55.9C67.6 0 45 31.4 45 85.3V128H0v64h45v192h83V192h56.4l7.6-64h-64z" />
+            </svg>
+            Facebook — geniusstudio.tech
+          </a>
+          <a href="https://www.instagram.com/geniusstudio.tech" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C8.7 0 8.3 0 7.1.1c-1.3 0-2.2.2-3 .5C3.4.9 2.7 1.3 2 2S.9 3.3.6 4.1c-.3.8-.5 1.7-.5 3C0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.1.6 2.9.2.8.6 1.5 1.3 2.2.7.7 1.3 1.1 2.1 1.4.8.3 1.6.5 2.9.6h5c3.3 0 3.7 0 4.9-.1 1.3-.1 2.1-.3 2.9-.6.8-.3 1.5-.7 2.1-1.4.7-.7 1.1-1.3 1.4-2.1.3-.8.5-1.6.6-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.1-.6-2.9-.2-.8-.6-1.5-1.3-2.2-.7-.7-1.3-1.1-2.1-1.4C19.1.3 18.3.1 17 0h-5zm0 5.8c3.4 0 6.2 2.8 6.2 6.2 0 3.4-2.8 6.2-6.2 6.2S5.8 15.4 5.8 12c0-3.4 2.8-6.2 6.2-6.2zm7.8-.6c0 .8-.6 1.4-1.4 1.4-.8 0-1.4-.6-1.4-1.4s.6-1.4 1.4-1.4c.8 0 1.4.6 1.4 1.4z" />
+            </svg>
+            Instagram — @geniusstudio.tech
+          </a>
+          <a href="https://www.youtube.com/@geniusstudiotech" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 1080 756" fill="currentColor">
+              <path
+                d="M1057.4 118.1c-12.4-46.5-49-83.1-95.5-95.5C877.7 0 540 0 540 0S202.3 0 118 22.6c-46.4 12.4-83 49-95.4 95.5C0 202.3 0 378 0 378s0 175.7 22.6 259.9c12.4 46.5 49 83.1 95.5 95.5C202.3 756 540 756 540 756s337.7 0 422-22.6c46.5-12.4 83.1-49 95.5-95.5C1080 553.7 1080 378 1080 378s0-175.7-22.6-259.9zM432 540V216l280.6 162L432 540z" />
+            </svg>
+            YouTube — @geniusstudiotech
+          </a>
+        </div>
+
+        <!-- Bottom Image -->
+        <div id="tilt-container"
+          style="margin-top:2rem; border-radius:var(--r-xl); overflow:hidden; border:1px solid var(--clr-border); height:350px; perspective: 1000px;"
+          class="reveal reveal-delay-3">
+          <img id="tilt-image" src="img/gdban.webp" alt="Graphic Design Work"
+            style="width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.1s ease-out;">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img src="img/GsLogo.svg" alt="Genius Studio">
+          <p>An Information Technology Agency providing premium creative and digital services. Established by Mohammed
+            Hassan.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="store.html">Store</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <a href="services.html#graphic">Graphic Design</a>
+          <a href="services.html#graphic">Motion Design</a>
+          <a href="services.html#dev">Web Development</a>
+          <a href="services.html#software">Software</a>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <a href="https://www.facebook.com/geniusstudio.tech" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/geniusstudio.tech" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@geniusstudiotech" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://wa.me/message/EVDYGDIDD2ABM1" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://t.me/mohammedhx2" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Genius Studio. All rights reserved. &mdash; <a
+            href="https://www.facebook.com/mohammedhx2" target="_blank" rel="noopener"
+            style="color:var(--clr-accent);">Mohammed Hassan</a></p>
+        <div class="footer__socials">
+          <a href="https://www.facebook.com/geniusstudio.tech" target="_blank" rel="noopener" aria-label="Facebook"><svg
+              viewBox="0 0 192 384">
+              <path
+                d="M128 128V89.9c0-17.2 3.8-25.9 30.5-25.9H192V0h-55.9C67.6 0 45 31.4 45 85.3V128H0v64h45v192h83V192h56.4l7.6-64h-64z" />
+            </svg></a>
+          <a href="https://www.instagram.com/geniusstudio.tech" target="_blank" rel="noopener"
+            aria-label="Instagram"><svg viewBox="0 0 24 24">
+              <path
+                d="M12 0C8.7 0 8.3 0 7.1.1c-1.3 0-2.2.2-3 .5C3.4.9 2.7 1.3 2 2S.9 3.3.6 4.1c-.3.8-.5 1.7-.5 3C0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.1.6 2.9.2.8.6 1.5 1.3 2.2.7.7 1.3 1.1 2.1 1.4.8.3 1.6.5 2.9.6h5c3.3 0 3.7 0 4.9-.1 1.3-.1 2.1-.3 2.9-.6.8-.3 1.5-.7 2.1-1.4.7-.7 1.1-1.3 1.4-2.1.3-.8.5-1.6.6-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.1-.6-2.9-.2-.8-.6-1.5-1.3-2.2-.7-.7-1.3-1.1-2.1-1.4C19.1.3 18.3.1 17 0h-5zm0 5.8c3.4 0 6.2 2.8 6.2 6.2 0 3.4-2.8 6.2-6.2 6.2S5.8 15.4 5.8 12c0-3.4 2.8-6.2 6.2-6.2zm7.8-.6c0 .8-.6 1.4-1.4 1.4-.8 0-1.4-.6-1.4-1.4s.6-1.4 1.4-1.4c.8 0 1.4.6 1.4 1.4z" />
+            </svg></a>
+          <a href="https://www.youtube.com/@geniusstudiotech" target="_blank" rel="noopener" aria-label="YouTube"><svg
+              viewBox="0 0 1080 756">
+              <path
+                d="M1057.4 118.1c-12.4-46.5-49-83.1-95.5-95.5C877.7 0 540 0 540 0S202.3 0 118 22.6c-46.4 12.4-83 49-95.4 95.5C0 202.3 0 378 0 378s0 175.7 22.6 259.9c12.4 46.5 49 83.1 95.5 95.5C202.3 756 540 756 540 756s337.7 0 422-22.6c46.5-12.4 83.1-49 95.5-95.5C1080 553.7 1080 378 1080 378s0-175.7-22.6-259.9zM432 540V216l280.6 162L432 540z" />
+            </svg></a>
+          <a href="https://t.me/mohammedhx2" target="_blank" rel="noopener" aria-label="Telegram"><svg
+              viewBox="0 0 448 376">
+              <path
+                d="m446.7 34.4-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9L366.7 75.3c8.3-7.4-1.8-11.5-12.9-4.1l-236 148.6L16.2 188c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 2.2c18.4-6.9 34.5 4.1 28.5 32.2z" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="background.js"></script>
+  <script>
+    // ── Custom Select Dropdown ──
+    (function () {
+      const wrapper = document.getElementById('custom-select');
+      const trigger = wrapper.querySelector('.custom-select__trigger');
+      const valueEl = wrapper.querySelector('.custom-select__value');
+      const options = wrapper.querySelectorAll('.custom-select__option');
+      const hiddenInput = document.getElementById('service');
+
+      trigger.addEventListener('click', () => {
+        wrapper.classList.toggle('open');
+      });
+
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          wrapper.classList.toggle('open');
+        }
+        if (e.key === 'Escape') {
+          wrapper.classList.remove('open');
+        }
+      });
+
+      options.forEach(option => {
+        option.addEventListener('click', () => {
+          options.forEach(o => o.classList.remove('selected'));
+          option.classList.add('selected');
+          valueEl.textContent = option.textContent;
+          hiddenInput.value = option.dataset.value;
+          trigger.classList.add('has-value');
+          wrapper.classList.remove('open');
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!wrapper.contains(e.target)) {
+          wrapper.classList.remove('open');
+        }
+      });
+    })();
+
+    // ── Form Submission ──
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn.querySelector('.btn__text');
+    const btnSpinner = submitBtn.querySelector('.btn__spinner');
+    const toast = document.getElementById('toast');
+    const toastClose = toast.querySelector('.toast__close');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Switch to sending state
+      btnText.style.display = 'none';
+      btnSpinner.style.display = 'inline-flex';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      submitBtn.style.cursor = 'wait';
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch('https://formspree.io/f/mkoebbbq', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          // Reset form
+          form.reset();
+          // Reset custom select
+          const valueEl = document.querySelector('.custom-select__value');
+          const trigger = document.querySelector('.custom-select__trigger');
+          valueEl.textContent = 'Select a service…';
+          trigger.classList.remove('has-value');
+          document.querySelectorAll('.custom-select__option').forEach(o => o.classList.remove('selected'));
+          document.getElementById('service').value = '';
+
+          // Show success toast
+          showToast('success');
+        } else {
+          showToast('error');
+        }
+      } catch (err) {
+        showToast('error');
+      } finally {
+        // Restore button
+        btnText.style.display = 'inline';
+        btnSpinner.style.display = 'none';
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+      }
+    });
+
+    function showToast(type) {
+      const icon = toast.querySelector('.toast__icon');
+      const title = toast.querySelector('.toast__title');
+      const desc = toast.querySelector('.toast__desc');
+
+      if (type === 'success') {
+        icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+        title.textContent = 'Message Sent!';
+        desc.textContent = "We'll get back to you within 24 hours.";
+        toast.className = 'toast toast--success toast--visible';
+      } else {
+        icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
+        title.textContent = 'Something went wrong';
+        desc.textContent = 'Please try again or contact us directly.';
+        toast.className = 'toast toast--error toast--visible';
+      }
+
+      // Auto-dismiss after 5 seconds
+      setTimeout(() => {
+        toast.classList.remove('toast--visible');
+      }, 5000);
+    }
+
+    toastClose.addEventListener('click', () => {
+      toast.classList.remove('toast--visible');
+    });
+
+    // ── 3D Tilt Effect for Bottom Image ──
+    const tiltContainer = document.getElementById('tilt-container');
+    const tiltImage = document.getElementById('tilt-image');
+
+    if (tiltContainer && tiltImage) {
+      tiltContainer.addEventListener('mousemove', (e) => {
+        const rect = tiltContainer.getBoundingClientRect();
+
+        // Calculate mouse position relative to the center of the container
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Calculate rotation (max 10 degrees)
+        // If mouse is on right, rotateY should be positive
+        // If mouse is on bottom, rotateX should be negative
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        // Remove the transition while moving for instant tracking
+        tiltContainer.style.transition = 'none';
+        tiltContainer.style.transform = `perspective(1000px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      tiltContainer.addEventListener('mouseleave', () => {
+        // Add smooth transition back to original state
+        tiltContainer.style.transition = 'transform 0.5s var(--ease-apple)';
+        tiltContainer.style.transform = `perspective(1000px) scale(1) rotateX(0deg) rotateY(0deg)`;
+      });
+
+      tiltContainer.addEventListener('mouseenter', () => {
+        tiltContainer.style.transition = 'transform 0.1s ease-out';
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+# Initial Upload (First time only)
+1. Initialize the local directory as a Git repository.
+git init
+
+2. Add the files in your new local repository. This stages them for the first commit.
+git add .
+
+3. Commit the files that you've staged in your local repository.
+git commit -m "Initial commit"
+
+4. Change the branch name to 'main'.
+git branch -M main
+
+5. Add the URL for the remote repository where your local repository will be pushed.
+git remote add origin <YOUR_GITHUB_REPOSITORY_URL>
+
+6. Push the changes in your local repository to GitHub.
+git push -u origin main
+
+--------------------------------------------------
+
+# Update Website (Every time you make changes)
+1. Add all changed files to be committed.
+git add .
+
+2. Commit the changes with a message.
+git commit -m "Update website"
+
+3. Push the changes to GitHub.
+git push
