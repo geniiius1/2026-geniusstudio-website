@@ -1538,6 +1538,305 @@ button {
 }
 
 /* =============================================
+   ORDER CHAT MODAL
+   ============================================= */
+.order-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-4);
+  background: rgba(5, 8, 14, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.order-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.order-modal__dialog {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(180deg, #131a26 0%, #0c1017 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(34, 158, 217, 0.25), 0 0 50px -10px rgba(34, 158, 217, 0.2);
+  transform: scale(0.94) translateY(12px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+.order-modal.is-open .order-modal__dialog {
+  transform: scale(1) translateY(0);
+}
+
+.order-modal__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--clr-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.order-modal__close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.order-modal__preview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  margin-bottom: 1.35rem;
+}
+
+.order-modal__thumb {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #0d1117;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.order-modal__info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.order-modal__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-text-primary);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.order-modal__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #38ef7d;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.order-modal__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38ef7d;
+  box-shadow: 0 0 8px #38ef7d;
+}
+
+.order-modal__heading {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--clr-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.85rem;
+  text-align: center;
+}
+
+.order-channel-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-apple);
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.order-channel-btn:hover {
+  transform: translateY(-2px);
+}
+
+.order-channel-btn__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.order-channel-btn__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.order-channel-btn__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.order-channel-btn__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.order-channel-btn__sub {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+}
+
+.order-channel-btn__tag {
+  margin-left: auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+/* WhatsApp Channel */
+.order-channel-btn--wa {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.16) 0%, rgba(18, 140, 126, 0.08) 100%);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+}
+.order-channel-btn--wa .order-channel-btn__icon {
+  background: rgba(37, 211, 102, 0.2);
+  color: #25D366;
+}
+.order-channel-btn--wa:hover {
+  background: rgba(37, 211, 102, 0.24);
+  border-color: #25D366;
+  box-shadow: 0 10px 24px -5px rgba(37, 211, 102, 0.35);
+}
+.order-channel-btn--wa .order-channel-btn__tag {
+  background: #25D366;
+  color: #062b14;
+}
+
+/* Telegram Channel */
+.order-channel-btn--tg {
+  background: linear-gradient(135deg, rgba(34, 158, 217, 0.16) 0%, rgba(15, 100, 160, 0.08) 100%);
+  border: 1px solid rgba(34, 158, 217, 0.35);
+}
+.order-channel-btn--tg .order-channel-btn__icon {
+  background: rgba(34, 158, 217, 0.2);
+  color: #229ED9;
+}
+.order-channel-btn--tg:hover {
+  background: rgba(34, 158, 217, 0.24);
+  border-color: #229ED9;
+  box-shadow: 0 10px 24px -5px rgba(34, 158, 217, 0.35);
+}
+.order-channel-btn--tg .order-channel-btn__tag {
+  background: rgba(34, 158, 217, 0.25);
+  color: #63c6ff;
+  border: 1px solid rgba(34, 158, 217, 0.3);
+}
+
+/* Messenger Channel */
+.order-channel-btn--ms {
+  background: linear-gradient(135deg, rgba(0, 132, 255, 0.16) 0%, rgba(160, 51, 255, 0.08) 100%);
+  border: 1px solid rgba(0, 132, 255, 0.35);
+}
+.order-channel-btn--ms .order-channel-btn__icon {
+  background: rgba(0, 132, 255, 0.2);
+  color: #0084FF;
+}
+.order-channel-btn--ms:hover {
+  background: rgba(0, 132, 255, 0.24);
+  border-color: #0084FF;
+  box-shadow: 0 10px 24px -5px rgba(0, 132, 255, 0.35);
+}
+.order-channel-btn--ms .order-channel-btn__tag {
+  background: rgba(0, 132, 255, 0.25);
+  color: #4da6ff;
+  border: 1px solid rgba(0, 132, 255, 0.3);
+}
+
+/* Payments / Fallback Footer */
+.order-modal__payments {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+.order-modal__payments-title {
+  font-size: 0.72rem;
+  color: var(--clr-text-tertiary);
+  margin-bottom: 0.5rem;
+  display: block;
+  letter-spacing: 0.02em;
+}
+.order-modal__payment-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.order-modal__pill {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--clr-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+}
+.order-modal__fallback {
+  margin-top: 0.85rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+.order-modal__fallback a {
+  color: var(--clr-text-tertiary);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.order-modal__fallback a:hover {
+  color: var(--clr-accent);
+}
+
+/* =============================================
    PAGE HERO (inner pages)
    ============================================= */
 .page-hero {

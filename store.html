@@ -327,6 +327,91 @@
     </div>
   </footer>
 
+  <!-- ORDER CHAT MODAL -->
+  <div id="order-modal" class="order-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-name">
+    <div class="order-modal__dialog">
+      <button type="button" class="order-modal__close" id="modal-close" aria-label="Close dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Product Preview -->
+      <div class="order-modal__preview">
+        <img id="modal-product-img" src="" alt="Product Thumbnail" class="order-modal__thumb">
+        <div class="order-modal__info">
+          <h3 id="modal-product-name" class="order-modal__name">Software Name</h3>
+          <span class="order-modal__badge">
+            <span class="order-modal__badge-dot"></span>
+            Official Licence • مۆڵەتی ئەسڵی
+          </span>
+        </div>
+      </div>
+
+      <div class="order-modal__heading">داواکردنی ڕاستەوخۆ • Instant Direct Order</div>
+
+      <!-- Action Channels -->
+      <div class="order-modal__channels">
+        <!-- WhatsApp -->
+        <a id="modal-wa-link" href="#" target="_blank" rel="noopener" class="order-channel-btn order-channel-btn--wa">
+          <div class="order-channel-btn__icon">
+            <svg viewBox="0 0 93 93" fill="currentColor">
+              <path d="M46.5.5C21.1.5.5 21.1.5 46.5c0 9.6 2.9 18.7 8.4 26.5L.7 91c-.2.4-.1.8.2 1.1.3.3.7.4 1.1.3l19.7-7.2c7.4 4.8 16 7.3 24.8 7.3h.1c25.4 0 46-20.6 46-46S71.8.5 46.5.5z"/>
+            </svg>
+          </div>
+          <div class="order-channel-btn__text">
+            <span class="order-channel-btn__title">WhatsApp</span>
+            <span class="order-channel-btn__sub">خێراترین وەڵامدانەوە • Instant Response</span>
+          </div>
+          <span class="order-channel-btn__tag">خێراترین</span>
+        </a>
+
+        <!-- Telegram -->
+        <a id="modal-tg-link" href="#" target="_blank" rel="noopener" class="order-channel-btn order-channel-btn--tg">
+          <div class="order-channel-btn__icon">
+            <svg viewBox="0 0 448 376" fill="currentColor">
+              <path d="m446.7 34.4-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9L366.7 75.3c8.3-7.4-1.8-11.5-12.9-4.1l-236 148.6L16.2 188c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 2.2c18.4-6.9 34.5 4.1 28.5 32.2z"/>
+            </svg>
+          </div>
+          <div class="order-channel-btn__text">
+            <span class="order-channel-btn__title">Telegram</span>
+            <span class="order-channel-btn__sub">@mohammedhx2 • Fast Activation</span>
+          </div>
+          <span class="order-channel-btn__tag">Telegram</span>
+        </a>
+
+        <!-- Messenger -->
+        <a id="modal-ms-link" href="https://m.me/geniusstudio.tech" target="_blank" rel="noopener" class="order-channel-btn order-channel-btn--ms">
+          <div class="order-channel-btn__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.096.304 2.256.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.8 8.4l3.145 3.26 5.873-3.26-6.627 6.563z"/>
+            </svg>
+          </div>
+          <div class="order-channel-btn__text">
+            <span class="order-channel-btn__title">Messenger</span>
+            <span class="order-channel-btn__sub">m.me/geniusstudio.tech</span>
+          </div>
+          <span class="order-channel-btn__tag">Facebook</span>
+        </a>
+      </div>
+
+      <!-- Payment Pills -->
+      <div class="order-modal__payments">
+        <span class="order-modal__payments-title">شێوازی پارەدان • Accepted Payments:</span>
+        <div class="order-modal__payment-pills">
+          <span class="order-modal__pill">⚡ FastPay</span>
+          <span class="order-modal__pill">🏦 FIB Bank</span>
+          <span class="order-modal__pill">📱 ZainCash</span>
+          <span class="order-modal__pill">چرکەساتی</span>
+        </div>
+        <div class="order-modal__fallback">
+          <a id="modal-form-fallback" href="contact.html">یاخود فۆڕمی پەیوەندی ماڵپەڕ • Or website contact form &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="background.js"></script>
   <script>
     (function () {
@@ -392,6 +477,67 @@
           filterProducts();
         });
       }
+
+      // ── Order Chat Modal Logic ──
+      const modal = document.getElementById('order-modal');
+      const modalClose = document.getElementById('modal-close');
+      const modalImg = document.getElementById('modal-product-img');
+      const modalName = document.getElementById('modal-product-name');
+      const modalWaLink = document.getElementById('modal-wa-link');
+      const modalTgLink = document.getElementById('modal-tg-link');
+      const modalMsLink = document.getElementById('modal-ms-link');
+      const modalFallback = document.getElementById('modal-form-fallback');
+
+      function openModal(name, imgSrc) {
+        modalName.textContent = name;
+        modalImg.src = imgSrc;
+        modalImg.alt = name;
+
+        const messageText = `سڵاو جینیەس ستۆدیۆ، دەمەوێت داوای ئەم بەرهەمە بکەم:\n${name}\n\nHello Genius Studio, I would like to order: ${name}`;
+        const encodedMsg = encodeURIComponent(messageText);
+
+        modalWaLink.href = `https://wa.me/message/EVDYGDIDD2ABM1?text=${encodedMsg}`;
+        modalTgLink.href = `https://t.me/mohammedhx2?text=${encodedMsg}`;
+        modalMsLink.href = `https://m.me/geniusstudio.tech`;
+        modalFallback.href = `contact.html?service=Original%20Software%20Licence&product=${encodeURIComponent(name)}`;
+
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          e.preventDefault();
+          const nameEl = card.querySelector('.product-card__name');
+          const imgEl = card.querySelector('.product-card__img');
+          const name = nameEl ? nameEl.textContent.trim() : 'Software Licence';
+          const imgSrc = imgEl ? imgEl.getAttribute('src') : '';
+          openModal(name, imgSrc);
+        });
+      });
+
+      if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+      }
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
     })();
   </script>
 </body>
