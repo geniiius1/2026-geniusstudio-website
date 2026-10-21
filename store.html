@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="store-page">
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
@@ -77,45 +77,35 @@
     <a href="contact.html">Contact Us</a>
   </div>
 
-  <!-- PAGE HERO -->
-  <div class="page-hero text-center">
+  <!-- STORE -->
+  <section class="section store-section">
     <div class="container">
-      <div class="eyebrow reveal" style="justify-content:center;">
-        <span class="dot"></span>Official Software Licences
-      </div>
-      <h1 class="display-1 reveal reveal-delay-1">The Software <em>Store.</em></h1>
-      <p class="body-lg reveal reveal-delay-2" style="max-width:540px; margin-inline:auto; margin-top:1.5rem;">
-        Genuine, authorised licences from the world's leading software publishers. Empower your workflow with the tools
-        you need.
-      </p>
-    </div>
-  </div>
-
-  <!-- STORE GRID -->
-  <section class="section">
-    <div class="container">
-      <!-- Store Controls: Search & Category Filter -->
-      <div class="store-controls reveal" style="margin-bottom: 2.5rem;">
-        <div class="store-search-wrapper">
-          <svg class="store-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input type="text" id="store-search" class="store-search-input" placeholder="Search software (e.g. Adobe, Microsoft, IDM)..." autocomplete="off" aria-label="Search software">
-          <button type="button" id="store-search-clear" class="store-search-clear" aria-label="Clear search">&times;</button>
+      <header class="store-header">
+        <div class="store-header__row">
+          <h1 class="store-header__title">Store</h1>
+          <div class="store-search-wrapper">
+            <svg class="store-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="store-search" class="store-search-input" placeholder="Search licences" autocomplete="off" aria-label="Search licences">
+            <button type="button" id="store-search-clear" class="store-search-clear" aria-label="Clear search">&times;</button>
+          </div>
         </div>
-        <div class="store-filters" role="tablist" aria-label="Software Categories">
+        <div class="store-filters" role="tablist" aria-label="Professional categories">
           <button type="button" class="store-filter-btn active" data-category="all">All</button>
-          <button type="button" class="store-filter-btn" data-category="creative">Creative &amp; Design</button>
-          <button type="button" class="store-filter-btn" data-category="productivity">Productivity &amp; Office</button>
-          <button type="button" class="store-filter-btn" data-category="engineering">3D &amp; Engineering</button>
-          <button type="button" class="store-filter-btn" data-category="utilities">Security &amp; Utilities</button>
+          <button type="button" class="store-filter-btn" data-category="photography">Photography</button>
+          <button type="button" class="store-filter-btn" data-category="video-editing">Video Editing</button>
+          <button type="button" class="store-filter-btn" data-category="graphic-design">Graphic Design</button>
+          <button type="button" class="store-filter-btn" data-category="3d-engineering">3D &amp; Engineering</button>
+          <button type="button" class="store-filter-btn" data-category="ai">AI</button>
+          <button type="button" class="store-filter-btn" data-category="productivity">Productivity</button>
         </div>
-      </div>
+      </header>
 
       <div class="store-grid">
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Adobe%20Creative%20Cloud%20Pro" class="product-card reveal" data-category="creative" data-name="Adobe Creative Cloud Pro Photoshop Illustrator Premiere After Effects Design">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Adobe%20Creative%20Cloud%20Pro" class="product-card reveal" data-categories="graphic-design" data-name="Adobe Creative Cloud Pro Photoshop Illustrator Premiere After Effects Graphic Design">
           <div class="product-card__media">
             <img src="poster/adobecc.webp?v=2" alt="Adobe Creative Cloud Pro" class="product-card__img" width="700" height="700" loading="eager" fetchpriority="high">
           </div>
@@ -125,7 +115,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Autodesk%20Education%20Apps" class="product-card reveal reveal-delay-1" data-category="engineering" data-name="Autodesk Education Apps AutoCAD 3ds Max Maya Revit Inventor Engineering Architecture">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Autodesk%20Education%20Apps" class="product-card reveal reveal-delay-1" data-categories="3d-engineering" data-name="Autodesk Education Apps AutoCAD 3ds Max Maya Revit Inventor 3D Engineering Architecture">
           <div class="product-card__media">
             <img src="poster/autodesk.webp?v=2" alt="Autodesk Education Apps" class="product-card__img" width="700" height="700" loading="eager" fetchpriority="high">
           </div>
@@ -135,7 +125,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Canva%20Education" class="product-card reveal reveal-delay-2" data-category="creative" data-name="Canva Education Pro Design Templates Presentation Graphics Social Media">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Canva%20Education" class="product-card reveal reveal-delay-2" data-categories="graphic-design" data-name="Canva Education Pro Design Templates Presentation Graphics Social Media Graphic Design">
           <div class="product-card__media">
             <img src="poster/canva.webp?v=2" alt="Canva Education" class="product-card__img" width="700" height="700" loading="eager" fetchpriority="high">
           </div>
@@ -145,7 +135,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=CapCut%20Pro" class="product-card reveal reveal-delay-3" data-category="creative" data-name="CapCut Pro Video Editing AI Effects Transitions Video Maker">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=CapCut%20Pro" class="product-card reveal reveal-delay-3" data-categories="video-editing" data-name="CapCut Pro Video Editing Effects Transitions">
           <div class="product-card__media">
             <img src="poster/capcut.webp?v=2" alt="CapCut Pro" class="product-card__img" width="700" height="700" loading="eager" fetchpriority="high">
           </div>
@@ -155,7 +145,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Envato%20Elements%20Bot" class="product-card reveal" data-category="creative" data-name="Envato Elements Bot Graphics Video Templates Audio Stock Assets Unlimited Downloads">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Envato%20Elements%20Bot" class="product-card reveal" data-categories="graphic-design" data-name="Envato Elements Bot Graphics Templates Stock Assets Graphic Design">
           <div class="product-card__media">
             <img src="poster/envato.webp?v=2" alt="Envato Elements Bot" class="product-card__img" width="700" height="700" loading="lazy" decoding="async">
           </div>
@@ -165,7 +155,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Google%20AI%20Pro" class="product-card reveal reveal-delay-1" data-category="productivity" data-name="Google AI Pro Gemini Advanced Workspace 2TB Cloud AI Assistant">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Google%20AI%20Pro" class="product-card reveal reveal-delay-1" data-categories="ai" data-name="Google AI Pro Gemini Advanced">
           <div class="product-card__media">
             <img src="poster/google_ai.webp?v=2" alt="Google AI Pro" class="product-card__img" width="700" height="700" loading="lazy" decoding="async">
           </div>
@@ -176,7 +166,7 @@
         </a>
 
         <a href="contact.html?service=Original%20Software%20Licence&amp;product=Internet%20Download%20Manager"
-          class="product-card reveal reveal-delay-2" data-category="utilities" data-name="Internet Download Manager IDM Fast Download Accelerator Official Reseller">
+          class="product-card reveal reveal-delay-2" data-categories="" data-name="Internet Download Manager IDM Download Accelerator">
           <div class="product-card__media">
             <img src="poster/idm.webp?v=2" alt="Internet Download Manager" class="product-card__img" width="700" height="700" loading="lazy" decoding="async">
           </div>
@@ -186,7 +176,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Magnific%20AI%20(Freepik)" class="product-card reveal reveal-delay-3" data-category="creative" data-name="Magnific AI Freepik Upscaler Image Enhancer 4K 8K Resolution AI Creative">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Magnific%20AI%20(Freepik)" class="product-card reveal reveal-delay-3" data-categories="photography" data-name="Magnific AI Freepik Upscaler Photography Image Enhancer">
           <div class="product-card__media">
             <img src="poster/magnific.webp?v=2" alt="Magnific AI (Freepik)" class="product-card__img" width="700" height="700" loading="lazy" decoding="async">
           </div>
@@ -196,7 +186,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Microsoft%20Office%20365" class="product-card reveal" data-category="productivity" data-name="Microsoft Office 365 Word Excel PowerPoint Outlook OneDrive Cloud Storage">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Microsoft%20Office%20365" class="product-card reveal" data-categories="productivity" data-name="Microsoft Office 365 Word Excel PowerPoint Outlook Productivity">
           <div class="product-card__media">
             <img src="poster/o365.webp?v=2" alt="Microsoft Office 365" class="product-card__img" width="700" height="700" loading="lazy" decoding="async">
           </div>
@@ -206,7 +196,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Notion%20Business" class="product-card reveal reveal-delay-1" data-category="productivity" data-name="Notion Business Workspace Notes Docs Wiki Project Management Team Collaboration AI">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Notion%20Business" class="product-card reveal reveal-delay-1" data-categories="productivity" data-name="Notion Business Workspace Notes Docs Productivity Project Management">
           <div class="product-card__media">
             <img src="poster/notion.webp?v=2" alt="Notion Business" class="product-card__img" width="700" height="700" loading="lazy" decoding="async">
           </div>
@@ -216,7 +206,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=ProtonVPN" class="product-card reveal reveal-delay-2" data-category="utilities" data-name="ProtonVPN Secure Fast VPN Privacy Protection Encrypted Internet Security Switzerland">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=ProtonVPN" class="product-card reveal reveal-delay-2" data-categories="" data-name="ProtonVPN Privacy Protection">
           <div class="product-card__media">
             <img src="poster/protonvpn.webp?v=2" alt="ProtonVPN" class="product-card__img" width="700" height="700" loading="lazy" decoding="async">
           </div>
@@ -226,7 +216,7 @@
           </div>
         </a>
 
-        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Windows%20License%20Key" class="product-card reveal reveal-delay-3" data-category="utilities" data-name="Windows License Key 10 11 Pro Home Genuine Official Retail Key Microsoft OS">
+        <a href="contact.html?service=Original%20Software%20Licence&amp;product=Windows%20License%20Key" class="product-card reveal reveal-delay-3" data-categories="" data-name="Windows License Key 10 11 Pro Home Genuine">
           <div class="product-card__media">
             <img src="poster/windows.webp?v=2" alt="Windows License Key" class="product-card__img" width="700" height="700" loading="lazy" decoding="async">
           </div>
@@ -249,12 +239,8 @@
 
       </div>
 
-      <!-- CTA -->
-      <div class="card reveal" style="text-align:center; margin-top:4rem; padding:3rem;">
-        <h3 class="headline" style="margin-bottom:1rem;">Looking for something else?</h3>
-        <p class="body-md" style="max-width:480px; margin-inline:auto; margin-bottom:2rem;">We can source most
-          professional software titles. Contact us with your requirements and we'll get back to you with a quote.</p>
-        <a href="contact.html" class="btn btn--primary">Contact Sales</a>
+      <div class="store-footnote reveal">
+        <p>Need another professional licence? <a href="contact.html">Contact sales</a></p>
       </div>
     </div>
   </section>
@@ -429,10 +415,10 @@
         let visibleCount = 0;
 
         cards.forEach(card => {
-          const category = card.dataset.category || '';
+          const categories = (card.dataset.categories || '').split(/\s+/).filter(Boolean);
           const name = (card.dataset.name || '').toLowerCase();
 
-          const matchesCategory = (currentCategory === 'all') || (category === currentCategory);
+          const matchesCategory = (currentCategory === 'all') || categories.includes(currentCategory);
           const matchesQuery = !currentQuery || name.includes(currentQuery);
 
           if (matchesCategory && matchesQuery) {
