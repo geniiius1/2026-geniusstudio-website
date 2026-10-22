@@ -1483,6 +1483,79 @@ button {
   box-shadow: 0 4px 14px var(--clr-accent-glow);
 }
 
+/* Store Payment Assurance Bar */
+.store-payment-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 1.25rem;
+  background: var(--clr-surface-1);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-pill);
+  margin-top: 1.25rem;
+  margin-inline: auto;
+  max-width: fit-content;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .store-payment-bar {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.store-payment-bar__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--clr-text-tertiary);
+}
+
+.store-payment-bar__items {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.store-payment-bar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--clr-text-secondary);
+}
+
+.store-payment-bar__item img {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.store-payment-bar__instant {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--r-pill);
+  letter-spacing: 0.02em;
+}
+
+.store-payment-bar__instant svg {
+  color: #10b981;
+}
+
 .product-card.is-hidden {
   display: none !important;
 }
@@ -1894,22 +1967,108 @@ button {
   display: block;
 }
 
-.order-modal__payment-pills {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  flex-wrap: wrap;
+.order-modal__payment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
 }
 
-.order-modal__pill {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--clr-text-secondary);
-  background: var(--clr-surface-2);
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 0.35rem;
+  background: var(--clr-surface-1);
   border: 1px solid var(--clr-border);
-  padding: 0.28rem 0.65rem;
+  border-radius: var(--r-md);
+  transition: all 0.25s var(--ease-apple);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="light"] .payment-method {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.payment-method:hover {
+  transform: translateY(-3px);
+}
+
+/* Brand-specific hover effects */
+.payment-method--fastpay:hover {
+  border-color: rgba(230, 0, 92, 0.55);
+  background: rgba(230, 0, 92, 0.08);
+  box-shadow: 0 10px 24px -6px rgba(230, 0, 92, 0.35);
+}
+
+.payment-method--fib:hover {
+  border-color: rgba(10, 160, 143, 0.55);
+  background: rgba(10, 160, 143, 0.08);
+  box-shadow: 0 10px 24px -6px rgba(10, 160, 143, 0.35);
+}
+
+.payment-method--zaincash:hover {
+  border-color: rgba(123, 45, 142, 0.55);
+  background: rgba(123, 45, 142, 0.08);
+  box-shadow: 0 10px 24px -6px rgba(123, 45, 142, 0.35);
+}
+
+.payment-method--superqi:hover {
+  border-color: rgba(245, 184, 0, 0.55);
+  background: rgba(245, 184, 0, 0.08);
+  box-shadow: 0 10px 24px -6px rgba(245, 184, 0, 0.35);
+}
+
+.payment-method__logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease-apple);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.payment-method:hover .payment-method__logo {
+  transform: scale(1.12);
+}
+
+.payment-method__name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--clr-text-secondary);
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+}
+
+.payment-method:hover .payment-method__name {
+  color: var(--clr-text-primary);
+}
+
+.order-modal__instant-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  background: rgba(34, 158, 217, 0.08);
+  border: 1px solid rgba(34, 158, 217, 0.2);
+  padding: 0.3rem 0.75rem;
   border-radius: var(--r-pill);
+  margin-top: 0.1rem;
+  letter-spacing: 0.02em;
+}
+
+.order-modal__instant-badge svg {
+  color: var(--clr-accent);
 }
 
 .order-modal__fallback {
@@ -2399,6 +2558,39 @@ button {
 
   .responsive-banner {
     height: 300px !important;
+  }
+
+  .store-payment-bar {
+    gap: 0.6rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--r-md);
+  }
+
+  .store-payment-bar__label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .order-modal__dialog {
+    padding: 1.25rem 1rem;
+    max-width: 95vw;
+  }
+
+  .order-modal__payment-grid {
+    gap: 0.35rem;
+  }
+
+  .payment-method {
+    padding: 0.55rem 0.2rem;
+  }
+
+  .payment-method__logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .payment-method__name {
+    font-size: 0.62rem;
   }
 }
 
