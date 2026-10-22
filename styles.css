@@ -1483,79 +1483,6 @@ button {
   box-shadow: 0 4px 14px var(--clr-accent-glow);
 }
 
-/* Store Payment Assurance Bar */
-.store-payment-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  padding: 0.6rem 1.25rem;
-  background: var(--clr-surface-1);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--r-pill);
-  margin-top: 1.25rem;
-  margin-inline: auto;
-  max-width: fit-content;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="light"] .store-payment-bar {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-}
-
-.store-payment-bar__label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--clr-text-tertiary);
-}
-
-.store-payment-bar__items {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-}
-
-.store-payment-bar__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--clr-text-secondary);
-}
-
-.store-payment-bar__item img {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.store-payment-bar__instant {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.25);
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--r-pill);
-  letter-spacing: 0.02em;
-}
-
-.store-payment-bar__instant svg {
-  color: #10b981;
-}
-
 .product-card.is-hidden {
   display: none !important;
 }
@@ -2558,17 +2485,6 @@ button {
 
   .responsive-banner {
     height: 300px !important;
-  }
-
-  .store-payment-bar {
-    gap: 0.6rem;
-    padding: 0.5rem 0.85rem;
-    border-radius: var(--r-md);
-  }
-
-  .store-payment-bar__label {
-    width: 100%;
-    text-align: center;
   }
 
   .order-modal__dialog {
